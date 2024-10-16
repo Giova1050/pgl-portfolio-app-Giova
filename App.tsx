@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import React from 'react';
+import { useState } from "react";
+import React from "react";
 import {
   Button,
   Pressable,
@@ -8,8 +8,12 @@ import {
   Text,
   View,
   Image,
+  FlatList,
 } from "react-native";
 import QRCode from "react-native-qrcode-svg";
+
+import Card, { CardProps } from "./components/Card";
+import { cards } from "./data/Cards";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
@@ -46,35 +50,16 @@ export default function App() {
       {displayMyQR ? (
         <View style={styles.bodystails}>
           <View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Image
-                style={styles.avatar}
-                source={require("./assets/SofyanAmrabat.jpg")}
-              ></Image>
-              <View
-                style={{
-                  margin: 10,
-                  backgroundColor: "lightgray",
-                  padding: 10,
-                  borderRadius: 10,
-                  width: "70%",
-                }}
-              >
-                <Text
-                  style={{
-                    textAlign: "center",
-                    fontWeight: "700",
-                    fontSize: 20,
-                  }}
-                >
-                  Descripción sobre mí!
-                </Text>
-                <Text>
-                  Soy profe y me gusta mi trabajo aunque a veces me de por
-                  enrevesar prácticas para mis queridos alumnos
-                </Text>
-              </View>
-            </View>
+            <FlatList
+              data={cards}
+              renderItem={({ item }) => (
+                <Card
+                  title={item.title}
+                  body={item.body}
+                  imgSource={item.imgSource}
+                />
+              )}
+            />
             <Text
               style={{
                 color: "beriblak",
@@ -162,11 +147,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     height: "85%",
-  },
-  avatar: {
-    height: 90,
-    width: 90,
-    borderRadius: 100,
   },
   cosasQmeGustanMuxoEstails: {
     borderColor: "black",
