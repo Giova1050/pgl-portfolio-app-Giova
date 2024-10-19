@@ -1,15 +1,36 @@
-import React from 'react'
-import { View } from 'react-native'
+import React from "react";
+import { View, ScrollView, StyleSheet, FlatList, Text } from "react-native";
 
-const Scroll = () => {
+export type ScrollProps = {
+  title: string;
+};
+
+const Scroll = ({ title }: ScrollProps) => {
   return (
-    <View>
-
+    <View style={styles.cosasQmeGustanMuxoEstails}>
+        <Text>
+        {title}
+        </Text>
     </View>
-  )
-}
+  );
+};
 
-export default Scroll
+const styles = StyleSheet.create({
+  cosasQmeGustanMuxoEstails: {
+    borderColor: "black",
+    borderWidth: 1,
+    borderStyle: "dashed",
+    padding: 20,
+    color: "darkred",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontStyle: "italic",
+    fontSize: 16,
+    backgroundColor: "silver",
+  },
+});
+
+export default Scroll;
 
 /**
  * <ScrollView style={{ padding: 10 }}>
