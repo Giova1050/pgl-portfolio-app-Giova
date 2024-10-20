@@ -2,7 +2,7 @@ import { ScrollProps } from "../components/Scroll";
 
 export const scrolls: ScrollProps[] = [
     {
-        title: "El Té",
+        title: "La Monster",
         imgSource: require("../assets/img/arlecchino.png")
     },
     

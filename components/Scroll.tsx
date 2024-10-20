@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, ImageSourcePropType, Image } from "react-native";
 import { scrolls } from "../data/Scrolls";
+import { LIGHTTHEME } from "../styles/colors";
 
 export type ScrollProps = {
   title: string;
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     borderStyle: "solid",
-    backgroundColor: "silver",
+    backgroundColor: LIGHTTHEME.backgroundScroll,
   },
   avatar: {
     marginTop: 12,
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: "darkred",
+    color: LIGHTTHEME.textScroll,
     textAlign: "center",
     fontWeight: "bold",
     fontStyle: "italic",

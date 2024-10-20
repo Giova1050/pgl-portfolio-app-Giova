@@ -15,6 +15,7 @@ import { cards } from "./data/Cards";
 import Scroll, { ScrollProps } from "./components/Scroll";
 import { scrolls } from "./data/Scrolls";
 import QrCode from "./components/QrCode";
+import { LIGHTTHEME } from "./styles/colors";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   firsttoprowContainer: {
-    backgroundColor: "gray",
+    backgroundColor: LIGHTTHEME.firsttoprowContainer,
     textAlign: "center",
     fontWeight: "bold",
     textAlignVertical: "center",
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   },
   rowTopSecondContainer: {
     flexDirection: "row",
-    backgroundColor: "darkgray",
+    backgroundColor: LIGHTTHEME.rowTopSecondContainer,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     flex: 0.5,
   },
   textStyle1: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
     textTransform: "uppercase",
   },
