@@ -16,6 +16,7 @@ import Card, { CardProps } from "./components/Card";
 import { cards } from "./data/Cards";
 import Scroll, {ScrollProps} from "./components/Scroll";
 import { scrolls } from "./data/Scrolls";
+import QrCode from "./components/QrCode";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
@@ -85,11 +86,7 @@ export default function App() {
           </View>
         </View>
       ) : (
-        <View style={styles.bodystails}>
-          <View style={styles.CentrarcodigoQR}>
-            <QRCode value="https://github.com/adhernea" />
-          </View>
-        </View>
+        <QrCode/>
       )}
     </View>
   );
