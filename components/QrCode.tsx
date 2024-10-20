@@ -1,26 +1,27 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 
 const QrCode = () => {
   return (
-    <View style={styles.bodystails}>
-      <View style={styles.CentrarcodigoQR}>
-        <QRCode value="https://github.com/adhernea" />
+    <View style={styles.bodystyle}>
+      <View style={styles.QRCenter}>
+        <QRCode value="https://github.com/Giova1050" />
+        <Image style={styles.img} source={require("../assets/img/FurinaQR.png")}/>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  CentrarcodigoQR: {
+  QRCenter: {
     justifyContent: "center",
     borderWidth: 1,
     width: "100%",
     height: "100%",
     alignItems: "center",
   },
-  bodystails: {
+  bodystyle: {
     width: "100%",
     borderWidth: 2,
     borderColor: "black",
@@ -28,6 +29,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     height: "85%",
   },
+  img: {
+    marginBottom: -280,
+    width: 390,
+    height: 390
+  }
 });
 
 export default QrCode;
