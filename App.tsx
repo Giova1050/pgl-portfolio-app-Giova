@@ -1,15 +1,14 @@
 import { useState } from "react";
 import React from "react";
 import {
-  Button,
   Pressable,
-  ScrollView,
   StyleSheet,
   Text,
   View,
-  Image,
   FlatList,
   Switch,
+  useColorScheme,
+  ColorSchemeName,
 } from "react-native";
 import Card, { CardProps } from "./components/Card";
 import { cards } from "./data/Cards";
@@ -20,6 +19,9 @@ import { LIGHTTHEME } from "./styles/colors";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
+
+
+
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
@@ -47,10 +49,11 @@ export default function App() {
                   title={item.title}
                   body={item.body}
                   imgSource={item.imgSource}
-                />
-                <Switch
+                />    
               )}
             />
+            <Text style={{textAlign: "center"}}>Modo Claro/Oscuro</Text>
+            <Switch style={{alignSelf: "center"}} value={true} onChange={() => {}}/>
             <Text style={styles.textStyle3}>
               cosas que me gustan mucho:
             </Text>
