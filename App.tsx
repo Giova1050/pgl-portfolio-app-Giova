@@ -10,11 +10,9 @@ import {
   Image,
   FlatList,
 } from "react-native";
-import QRCode from "react-native-qrcode-svg";
-
 import Card, { CardProps } from "./components/Card";
 import { cards } from "./data/Cards";
-import Scroll, {ScrollProps} from "./components/Scroll";
+import Scroll, { ScrollProps } from "./components/Scroll";
 import { scrolls } from "./data/Scrolls";
 import QrCode from "./components/QrCode";
 
@@ -23,35 +21,22 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <Text style={styles.firsttoprowContainer}>My Portfolio App</Text>
+        <Text style={styles.firsttoprowContainer}>Mi Portfolio App</Text>
         <View style={styles.rowTopSecondContainer}>
           <Pressable
-            style={styles.buttonruta}
+            style={styles.buttomPath}
             onPress={() => setDisplayMyQR(true)}
           >
-            <Text
-              style={{
-                ...{
-                  color: "white",
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                },
-                ...styles.shadoxboxing,
-              }}
-            >
-              Mi info
-            </Text>
+            <Text style={styles.textStyle1}>Mi Info</Text>
           </Pressable>
-          <Button
-            onPress={() => setDisplayMyQR(false)}
-            title="Mi Repo"
-            color="light-gray"
-            accessibilityLabel="Un botón pal QR"
-          />
+          <Pressable
+            onPress={() => setDisplayMyQR(false)}>
+            <Text style={styles.textStyle2}>Mi Repo</Text>
+          </Pressable>
         </View>
       </View>
       {displayMyQR ? (
-        <View style={styles.bodystails}>
+        <View style={styles.bodystyle}>
           <View>
             <FlatList
               data={cards}
@@ -63,30 +48,18 @@ export default function App() {
                 />
               )}
             />
-            <Text
-              style={{
-                color: "beriblak",
-                fontWeight: "900",
-                textTransform: "capitalize",
-                fontSize: 20,
-                textAlign: "center",
-              }}
-            >
+            <Text style={styles.textStyle3}>
               cosas que me gustan mucho:
             </Text>
             <FlatList
               data={scrolls}
-              renderItem={({ item }) => (
-                <Scroll
-                  title={item.title}
-                />
-              )}
+              renderItem={({ item }) => <Scroll title={item.title} />}
               keyExtractor={(item, index) => `${index}-${item.title}`}
             />
           </View>
         </View>
       ) : (
-        <QrCode/>
+        <QrCode />
       )}
     </View>
   );
@@ -117,45 +90,33 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  buttonruta: {
-    width: "50%",
+  buttomPath: {
+    padding: 12,
+    flex: 0.5,
   },
-  bodystails: {
+  textStyle1: {
+    color: "white",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+  },
+  textStyle2: {
+    color: "black",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+  },
+  textStyle3: {
+    color: "black",
+    fontWeight: "900",
+    textTransform: "capitalize",
+    fontSize: 20,
+    textAlign: "center",
+  },
+  bodystyle: {
     width: "100%",
     borderWidth: 2,
     borderColor: "black",
     alignItems: "center",
     justifyContent: "space-between",
     height: "85%",
-  },
-  cosasQmeGustanMuxoEstails: {
-    borderColor: "black",
-    borderWidth: 1,
-    borderStyle: "dashed",
-    padding: 20,
-    color: "darkred",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontStyle: "italic",
-    fontSize: 16,
-    backgroundColor: "silver",
-  },
-  CentrarcodigoQR: {
-    justifyContent: "center",
-    borderWidth: 1,
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-  },
-  shadoxboxing: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 7,
-    },
-    shadowOpacity: 0.43,
-    shadowRadius: 9.51,
-
-    elevation: 15,
   },
 });
