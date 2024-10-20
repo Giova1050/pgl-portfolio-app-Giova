@@ -1,17 +1,24 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ImageSourcePropType, Image } from "react-native";
 import { scrolls } from "../data/Scrolls";
 
 export type ScrollProps = {
   title: string;
+  imgSource: ImageSourcePropType;
 };
 
-const Scroll = ({ title }: ScrollProps) => {
+const Scroll = ({ title, imgSource }: ScrollProps) => {
   return (
-    <View >
-      <Text style={styles.cosasQmeGustanMuxoEstails}>
-        {title}
-      </Text>
+    <View style={styles.cosasQmeGustanMuxoEstails}>
+      <Image
+        style={styles.avatar}
+        source={imgSource}
+      />
+      <Text style={styles.text}>{title}</Text>
+      <Image
+        style={styles.reversedAvatar}
+        source={imgSource}
+      />
     </View>
   );
 };
@@ -20,16 +27,31 @@ const styles = StyleSheet.create({
   cosasQmeGustanMuxoEstails: {
     borderColor: "black",
     borderWidth: 1,
-    borderStyle: "dashed",
-    padding: 20,
+    borderStyle: "solid",
+    backgroundColor: "silver",
+  },
+  avatar: {
+    marginTop: 12,
+    height: 60,
+    width: 60,
+    borderRadius: 100
+  },
+  reversedAvatar: {
+    alignSelf: "flex-end",
+    marginBottom: 20,
+    height: 60,
+    width: 60,
+    borderRadius: 100,
+  },
+  text: {
+    fontSize: 16,
     color: "darkred",
     textAlign: "center",
     fontWeight: "bold",
     fontStyle: "italic",
-    fontSize: 16,
-    backgroundColor: "silver",
-  },
+    marginTop: -32,
+    marginBottom: -44.5
+  }
 });
 
 export default Scroll;
-

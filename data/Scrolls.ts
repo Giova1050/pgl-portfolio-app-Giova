@@ -2,51 +2,63 @@ import { ScrollProps } from "../components/Scroll";
 
 export const scrolls: ScrollProps[] = [
     {
-        title: "Salir a pasear"
+        title: "El Té",
+        imgSource: require("../assets/img/arlecchino.png")
     },
     
     {
-        title: "Hola"
+        title: "Ver anime",
+        imgSource: require("../assets/img/Ayaka.png")
     },
 
     {
-        title: ""
+        title: "Los dulces",
+        imgSource: require("../assets/img/furina.png")
     },
 
     {
-        title: ""
+        title: "Peleas",
+        imgSource: require("../assets/img/Itto.png"),
     },
 
     {
-        title: ""
+        title: "Sentir el aire fresco",
+        imgSource: require("../assets/img/kazuha.png"),
     },
 
     {
-        title: ""
+        title: "La natacion",
+        imgSource: require("../assets/img/sigewinne.png"),
     },
 
     {
-        title: ""
+        title: "Leer manga",
+        imgSource: require("../assets/img/Yaemiko.png"),
     },
 
     {
-        title: ""
+        title: "La musica",
+        imgSource: require("../assets/img/Venti.png"),
     },
 
     {
-        title: ""
+        title: "Bailes",
+        imgSource:require("../assets/img/Nilou.png"),
     },
 
     {
-        title: ""
+        title: "Los viedojuegos",
+        imgSource: require("../assets/img/Navia.png"),
     },
 
     {
-        title: ""
+        title: "Estar en mis pensamientos",
+        imgSource: require("../assets/img/nahida.png"),
     },
 
     {
-        title: ""
+        title: "Las cosas paranormales",
+        imgSource:require("../assets/img/Hutao.png"),
     },
     
 ]

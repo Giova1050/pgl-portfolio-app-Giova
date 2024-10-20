@@ -53,7 +53,7 @@ export default function App() {
             </Text>
             <FlatList
               data={scrolls}
-              renderItem={({ item }) => <Scroll title={item.title} />}
+              renderItem={({ item }) => <Scroll title={item.title} imgSource={item.imgSource} />}
               keyExtractor={(item, index) => `${index}-${item.title}`}
             />
           </View>
