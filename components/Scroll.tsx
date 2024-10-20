@@ -1,5 +1,6 @@
 import React from "react";
-import { View, ScrollView, StyleSheet, FlatList, Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
+import { scrolls } from "../data/Scrolls";
 
 export type ScrollProps = {
   title: string;
@@ -7,10 +8,10 @@ export type ScrollProps = {
 
 const Scroll = ({ title }: ScrollProps) => {
   return (
-    <View style={styles.cosasQmeGustanMuxoEstails}>
-        <Text>
+    <View >
+      <Text style={styles.cosasQmeGustanMuxoEstails}>
         {title}
-        </Text>
+      </Text>
     </View>
   );
 };

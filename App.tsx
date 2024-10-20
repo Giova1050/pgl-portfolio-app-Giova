@@ -80,6 +80,7 @@ export default function App() {
                   title={item.title}
                 />
               )}
+              keyExtractor={(item, index) => `${index}-${item.title}`}
             />
           </View>
         </View>
