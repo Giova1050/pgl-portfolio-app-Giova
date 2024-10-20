@@ -9,6 +9,7 @@ import {
   View,
   Image,
   FlatList,
+  Switch,
 } from "react-native";
 import Card, { CardProps } from "./components/Card";
 import { cards } from "./data/Cards";
@@ -47,6 +48,7 @@ export default function App() {
                   body={item.body}
                   imgSource={item.imgSource}
                 />
+                <Switch
               )}
             />
             <Text style={styles.textStyle3}>
