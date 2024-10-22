@@ -23,8 +23,10 @@ export default function App() {
     <View style={[styles.container,
       {backgroundColor: themes ? LIGHTTHEME.backgroundContainer : DARKTHEME.backgroundContainer}]}>
       <View style={styles.topContainer}>
-        <Text style={styles.firsttoprowContainer}>Mi Portfolio App</Text>
-        <View style={styles.rowTopSecondContainer}>
+        <Text style={[styles.firsttoprowContainer,
+        { backgroundColor: themes ? LIGHTTHEME.firsttoprowContainer : DARKTHEME.firsttoprowContainer}]}>Mi Portfolio App</Text>
+        <View style={[styles.rowTopSecondContainer, 
+        { backgroundColor: themes ? LIGHTTHEME.rowTopSecondContainer: DARKTHEME.rowTopSecondContainer}]}>
           <Pressable
             style={styles.buttomPath}
             onPress={() => setDisplayMyQR(true)}
@@ -84,7 +86,6 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   firsttoprowContainer: {
-    backgroundColor: LIGHTTHEME.firsttoprowContainer,
     textAlign: "center",
     fontWeight: "bold",
     textAlignVertical: "center",
@@ -92,7 +93,6 @@ const styles = StyleSheet.create({
   },
   rowTopSecondContainer: {
     flexDirection: "row",
-    backgroundColor: LIGHTTHEME.rowTopSecondContainer,
     justifyContent: "center",
     alignItems: "center",
   },
