@@ -1,4 +1,5 @@
 export const LIGHTTHEME = {
+    backgroundContainer: "#fff",
     firsttoprowContainer: '#1CD414',
     rowTopSecondContainer: '#FFFF00',
     textScroll: '#2271E3',
@@ -7,7 +8,7 @@ export const LIGHTTHEME = {
 }
 
 export const DARKTHEME = {
-    backgroundContainer: '',
+    backgroundContainer: 'blue',
     firsttoprowContainer: '#2D572C',
     rowTopSecondContainer: '#E5BE01',
     textScroll: '#722F37',

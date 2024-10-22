@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet, Text, ImageSourcePropType, Image } from "react-native";
-import { scrolls } from "../data/Scrolls";
 import { LIGHTTHEME } from "../styles/colors";
 
 export type ScrollProps = {

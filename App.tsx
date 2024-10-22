@@ -7,23 +7,21 @@ import {
   View,
   FlatList,
   Switch,
-  useColorScheme,
-  ColorSchemeName,
 } from "react-native";
 import Card, { CardProps } from "./components/Card";
 import { cards } from "./data/Cards";
 import Scroll, { ScrollProps } from "./components/Scroll";
 import { scrolls } from "./data/Scrolls";
 import QrCode from "./components/QrCode";
-import { LIGHTTHEME } from "./styles/colors";
+import { LIGHTTHEME, DARKTHEME } from "./styles/colors";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
-
-
+  const [themes, setThemes] = useState(true);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,
+      {backgroundColor: themes ? LIGHTTHEME.backgroundContainer : DARKTHEME.backgroundContainer}]}>
       <View style={styles.topContainer}>
         <Text style={styles.firsttoprowContainer}>Mi Portfolio App</Text>
         <View style={styles.rowTopSecondContainer}>
@@ -33,8 +31,7 @@ export default function App() {
           >
             <Text style={styles.textStyle1}>Mi Info</Text>
           </Pressable>
-          <Pressable
-            onPress={() => setDisplayMyQR(false)}>
+          <Pressable onPress={() => setDisplayMyQR(false)}>
             <Text style={styles.textStyle2}>Mi Repo</Text>
           </Pressable>
         </View>
@@ -49,17 +46,21 @@ export default function App() {
                   title={item.title}
                   body={item.body}
                   imgSource={item.imgSource}
-                />    
+                />
               )}
             />
-            <Text style={{textAlign: "center"}}>Modo Claro/Oscuro</Text>
-            <Switch style={{alignSelf: "center"}} value={true} onChange={() => {}}/>
-            <Text style={styles.textStyle3}>
-              cosas que me gustan mucho:
-            </Text>
+            <Text style={{ textAlign: "center" }}>Modo Claro/Oscuro</Text>
+            <Switch
+              style={{ alignSelf: "center" }}
+              value={themes}
+              onChange={() => setThemes(!themes)}
+            />
+            <Text style={styles.textStyle3}>cosas que me gustan mucho:</Text>
             <FlatList
               data={scrolls}
-              renderItem={({ item }) => <Scroll title={item.title} imgSource={item.imgSource} />}
+              renderItem={({ item }) => (
+                <Scroll title={item.title} imgSource={item.imgSource} />
+              )}
               keyExtractor={(item, index) => `${index}-${item.title}`}
             />
           </View>
@@ -74,7 +75,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
