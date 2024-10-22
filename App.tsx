@@ -68,7 +68,7 @@ export default function App() {
           </View>
         </View>
       ) : (
-        <QrCode />
+        <QrCode themes={themes} />
       )}
     </View>
   );

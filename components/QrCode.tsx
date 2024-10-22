@@ -2,12 +2,16 @@ import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 
-const QrCode = () => {
+export type QrProps = {
+  themes: boolean
+}
+
+const QrCode = ({ themes }: QrProps) => {
   return (
     <View style={styles.bodystyle}>
       <View style={styles.QRCenter}>
         <QRCode value="https://github.com/Giova1050" />
-        <Image style={styles.img} source={require("../assets/img/FurinaQR.png")}/>
+        <Image style={styles.img} source={themes ? require("../assets/img/FurinaQR.png") : require("../assets/img/HutaoB.png")}/>
       </View>
     </View>
   );
