@@ -1,16 +1,16 @@
 export const LIGHTTHEME = {
-    backgroundContainer: "#fff",
-    firsttoprowContainer: '#1CD414',
-    rowTopSecondContainer: '#FFFF00',
-    textScroll: '#2271E3',
-    backgroundScroll: '#E4C1AE'
+    backgroundContainer: "#f8f9fe",
+    firsttoprowContainer: '#698ae8',
+    rowTopSecondContainer: '#e1e7f6',
+    textScroll: '#e1e7f6',
+    backgroundScroll: '#353ba7'
 
 }
 
 export const DARKTHEME = {
-    backgroundContainer: 'blue',
-    firsttoprowContainer: '#2D572C',
-    rowTopSecondContainer: '#E5BE01',
-    textScroll: '#722F37',
-    backgroundScroll: '#381F1D'
+    backgroundContainer: '#C61413',
+    firsttoprowContainer: '#e83f49',
+    rowTopSecondContainer: '#740001',
+    textScroll: '#cb010d ',
+    backgroundScroll: '#440c14'
 }
