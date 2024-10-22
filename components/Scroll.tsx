@@ -10,7 +10,7 @@ export type ScrollProps = {
 
 const Scroll = ({ title, imgSource }: ScrollProps) => {
   return (
-    <View style={styles.cosasQmeGustanMuxoEstails}>
+    <View style={styles.scrollContainerStyle}>
       <Image
         style={styles.avatar}
         source={imgSource}
@@ -25,7 +25,7 @@ const Scroll = ({ title, imgSource }: ScrollProps) => {
 };
 
 const styles = StyleSheet.create({
-  cosasQmeGustanMuxoEstails: {
+  scrollContainerStyle: {
     borderColor: "black",
     borderWidth: 1,
     borderStyle: "solid",
