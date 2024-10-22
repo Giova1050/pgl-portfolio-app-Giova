@@ -1,20 +1,27 @@
 import React from "react";
 import { View, StyleSheet, Text, ImageSourcePropType, Image } from "react-native";
-import { LIGHTTHEME } from "../styles/colors";
+import { DARKTHEME, LIGHTTHEME } from "../styles/colors";
 
 export type ScrollProps = {
   title: string;
   imgSource: ImageSourcePropType;
+  themes: boolean;
 };
 
-const Scroll = ({ title, imgSource }: ScrollProps) => {
+
+
+const Scroll = ({ title, imgSource, themes }: ScrollProps) => {
+  
+
   return (
-    <View style={styles.scrollContainerStyle}>
+    <View style={[styles.scrollContainerStyle,
+       {backgroundColor: themes ? LIGHTTHEME.backgroundScroll : DARKTHEME.backgroundScroll} ]}>
       <Image
         style={styles.avatar}
         source={imgSource}
       />
-      <Text style={styles.text}>{title}</Text>
+      <Text style={[styles.text,
+      {color: themes ? LIGHTTHEME.textScroll : DARKTHEME.textScroll}]}>{title}</Text>
       <Image
         style={styles.reversedAvatar}
         source={imgSource}
@@ -28,7 +35,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     borderStyle: "solid",
-    backgroundColor: LIGHTTHEME.backgroundScroll,
+    
   },
   avatar: {
     marginTop: 12,
@@ -45,7 +52,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: LIGHTTHEME.textScroll,
     textAlign: "center",
     fontWeight: "bold",
     fontStyle: "italic",

@@ -61,7 +61,7 @@ export default function App() {
             <FlatList
               data={scrolls}
               renderItem={({ item }) => (
-                <Scroll title={item.title} imgSource={item.imgSource} />
+                <Scroll title={item.title} imgSource={item.imgSource} themes={themes} />
               )}
               keyExtractor={(item, index) => `${index}-${item.title}`}
             />
